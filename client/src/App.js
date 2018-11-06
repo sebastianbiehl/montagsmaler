@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
 import { Route, Switch } from "react-router-dom";
 
-import Login from "./components/login";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import Room from "./components/Room/Room";
+import Lobby from "./components/Lobby/Lobby";
+import Profile from "./components/Profile/Profile";
 
 class App extends Component {
   constructor() {
@@ -23,23 +27,14 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/" component={Login} />
           <Route path="/login" component={Login} />
-          <Route path="/orders" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/room" component={Room} />
+          <Route path="/lobby" component={Lobby} />
+          <Route path="/profile" component={Profile} />
         </Switch>
       </div>
     );
-
-    // const { response } = this.state;
-    // return (
-    //   <div style={{ textAlign: "center" }}>
-    //     {response ? (
-    //       <p>The temperature in Florence is: {response} °F</p>
-    //     ) : (
-    //       <p>Loading...</p>
-    //     )}
-    //   </div>
-    // );
   }
 }
 
